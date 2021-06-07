@@ -1,10 +1,15 @@
+# needs R libraries
+# byandell/qtlview
+# igraph (cran)
+# kbroman/B6BTBR07a
+
 load("calls.RData")
 
 # colors
-maincolor <- "#FEEB96"
-bgcolor <- broman::brocolors("bg")
-fgcolor <- "white"
-dotcolor <- "white"
+maincolor <- "green4"
+bgcolor <- "white"
+fgcolor <- "black"
+dotcolor <- "black"
 gray <- "gray40"
 purple <- broman::brocolors("web")["purple"]
 green <- broman::brocolors("web")["green"]
@@ -14,7 +19,6 @@ calls <- sub("\\*", "", calls)
 
 library(igraph)
 iArrows <- igraph:::igraph.Arrows
-
 
 library(B6BTBR07a)
 data(topstuff)
