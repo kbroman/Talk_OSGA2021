@@ -2,7 +2,7 @@ R_OPTS=--no-save --no-restore --no-init-file --no-site-file # --vanilla, but wit
 
 STEM = osga2021
 
-#FIGS =
+FIGS = Figs/triple_asso.pdf
 
 all: docs/$(STEM).pdf
 
@@ -11,3 +11,6 @@ docs/$(STEM).pdf: $(STEM).pdf
 
 $(STEM).pdf: $(STEM).tex header.tex $(FIGS)
 	xelatex $<
+
+Figs/%.pdf: R/%.R
+	cd R;R CMD BATCH $(R_OPTS) $(^F)
