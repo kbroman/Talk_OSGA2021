@@ -4,6 +4,8 @@ These are slides for a seminar on _Identifying sample mix-ups in eQTL
 data_, for the [OSGA Webinar Series](https://opar.io/training/osga-webinar-series-2020.html)
 on 11 June 2021.
 
+Slides PDF: <https://kbroman.org/Talk_OSGA2021>
+
 Related papers:
 
 - Broman et al. (2015) Identification and correction of sample mix-ups
