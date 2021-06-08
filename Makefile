@@ -3,7 +3,8 @@ R_OPTS=--no-save --no-restore --no-init-file --no-site-file # --vanilla, but wit
 STEM = osga2021
 
 FIGS = Figs/triple_asso.pdf \
-	   Figs/b6btbr_plates.pdf
+	   Figs/b6btbr_plates.pdf \
+	   Figs/b6btbr_expr_swaps.pdf
 
 all: docs/$(STEM).pdf
 
