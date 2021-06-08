@@ -46,6 +46,22 @@
 
 \begin{frame}[c]{Associations in systems genetics}
   \figh{Figs/triple_asso.pdf}{0.95}
+
+  \note{
+    Systems genetics is all about associations between different
+    datasets. It's critical, then, that the sample labels are correct
+    for all data sets. As projects become larger and involve more
+    groups of scientists, there's a greater chance for the
+    introduction of errors in the sample labels.
+
+    Sample duplicates, mixtures, and mix-ups will all weaken
+    associations and so reduce the quality of the study results.
+
+    On the other hand, with high-throughput genomic phenotypes, there
+    is often the opportunity to both identify sample mix-ups and
+    correct them.
+  }
+
 \end{frame}
 
 
@@ -59,6 +75,18 @@
   \hfill \href{https://doi.org/10.1534/g3.115.019778}{\lolit
     \scriptsize Broman et al. (2015) {\tt doi:10.1534/g3.115.019778}}
 
+  \note{
+    Here's an example of a set of mix-ups in the DNA samples for a
+    project. In a mouse intercross with about 500 samples, there were
+    nearly 20\% mix-ups. The dots indicate that the correct sample was
+    in the correct place. The arrows point from where a sample should
+    have been to where it was actually found.
+
+    In this project, we had gene expression microarray data from six
+    different tissues; that allowed us to identify and correct these
+    errors.
+  }
+
 \end{frame}
 
 
@@ -70,6 +98,11 @@
 
   \hfill \href{https://doi.org/10.1534/g3.115.019778}{\lolit
     \scriptsize Broman et al. (2015) {\tt doi:10.1534/g3.115.019778}}
+
+  \note{
+    The mRNA samples had mix-ups, too. There were errors in each of
+    the six tissues.
+  }
 
 \end{frame}
 
@@ -85,6 +118,13 @@
   \hfill \href{https://doi.org/10.1093/bioinformatics/btr323}{\lolit
     \scriptsize Westra et al. (2011) {\tt doi:10.1093/bioinformatics/btr323}}
 
+  \note{
+    Westra et al. (2011) was among the first to identify this
+    potential problem and suggest a formal solution. They applied
+    their approach to a number of public data sets and identified
+    problems in most of them, including a study with 20\% mix-ups.
+  }
+
 \end{frame}
 
 
@@ -97,6 +137,13 @@
 \item mRNA $\leftrightarrow$ DNA
 \item protein $\leftrightarrow$ DNA
   \ei
+
+  \note{
+    If you have high-throughput, low-level phenotypes, you should at
+    least attempt to identify potential sample mix-ups. My goal is to
+    make it clear how to do this, to help ensure that this becomes a
+    routine part of the data cleaning procedures in eQTL analyses.
+  }
 
 \end{frame}
 
@@ -112,11 +159,25 @@
 
   {\vhilit Missing Data}
 
+  \note{
+    Before you do anything, you should look at the amount of missing
+    data, as this is often an important indication of sample quality.
+  }
+
 \end{frame}
 
 
 \begin{frame}[c]{Percent missing genotypes}
+
 \figh{Figs/missing_data.pdf}{0.95}
+
+  \note{
+    Here's a diversity outbred mouse project with 500 mice. Five
+    samples had $>$ 25\% missing data and almost surely need to be
+    omitted. A couple of samples have around 10\% missing data and
+    might be recoverable but are still worth watching.
+  }
+
 \end{frame}
 
 
@@ -152,6 +213,11 @@
 
   \ei
 
+  \note{
+    Here are some relevant references. The Lynch et al. (2012) paper has
+    some useful comments about experimental design.
+   }
+
 \end{frame}
 
 
@@ -175,6 +241,9 @@ Slides: \href{https://kbroman.org/Talk_OSGA2021}{\tt
 
 \href{https://twitter.com/kwbroman}{\tt \lolit @kwbroman}
 
+  \note{
+    Here is where you can find me and my slides.
+   }
 
 \end{frame}
 
