@@ -5,7 +5,8 @@ STEM = osga2021
 FIGS = Figs/triple_asso.pdf \
 	   Figs/b6btbr_plates.pdf \
 	   Figs/b6btbr_expr_swaps.pdf \
-	   Figs/missing_data.pdf
+	   Figs/missing_data.pdf \
+	   Figs/xydosage.pdf
 
 all: docs/$(STEM).pdf docs/$(STEM)_notes.pdf
 
