@@ -7,6 +7,9 @@ on 11 June 2021.
 - Slides PDF: <https://kbroman.org/Talk_OSGA2021>
 - Slides with notes: <https://kbroman.org/Talk_OSGA2021/osga2021_notes.pdf>
 
+Most of the data used here is not yet public, so you may not be able
+to build these slides yourself.
+
 Related papers:
 
 - Broman et al. (2015) Identification and correction of sample mix-ups
