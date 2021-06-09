@@ -17,12 +17,12 @@ par(mfrow=c(2,1), mar=c(5.1, 0.1, 2.1, 2.1))
 
 hist(rho[lower.tri(rho)], breaks=seq(-1, 1, len=301), xlab="Correlation between samples",
      ylab="", yaxt="n", main="")
-rug(rho[lower.tri(rho)])
+rug(rho[lower.tri(rho)], col="violetred")
 mtext(side=3, adj=1, "mRNAs", cex=1.5, col="slateblue")
 
 hist(rho_adj[lower.tri(rho)], breaks=seq(-1, 1, len=301), xlab="Correlation between samples",
      ylab="", yaxt="n", main="")
-rug(rho_adj[lower.tri(rho)])
+rug(rho_adj[lower.tri(rho)], col="violetred")
 mtext(side=3, adj=1, "mRNAs\nsex-adjusted", cex=1.5, col="slateblue")
 
 dev.off()
