@@ -7,3 +7,5 @@
 *.log
 *_notes.tex
 R/_cache/
+Data/
+notes.txt
