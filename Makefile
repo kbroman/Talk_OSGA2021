@@ -6,7 +6,8 @@ FIGS = Figs/triple_asso.pdf \
 	   Figs/b6btbr_plates.pdf \
 	   Figs/b6btbr_expr_swaps.pdf \
 	   Figs/missing_data.pdf \
-	   Figs/xydosage.pdf
+	   Figs/xydosage.pdf \
+	   Figs/hist_compare_geno.pdf
 
 all: docs/$(STEM).pdf docs/$(STEM)_notes.pdf
 
