@@ -140,7 +140,7 @@
 
   \note{
     If you have high-throughput, low-level phenotypes, you should at
-    least attempt to identify potential sample mix-ups. My goal is to
+    least attempt to identify potential sample mix-ups. My goal in this talk is to
     make it clear how to do this, to help ensure that this becomes a
     routine part of the data cleaning procedures in eQTL analyses.
   }
@@ -178,6 +178,10 @@
     samples had $>$ 25\% missing data and almost surely need to be
     omitted. A couple of samples have around 10\% missing data and
     might be recoverable but are still worth watching.
+
+    Note that I'll be using a variety of data in this talk, but I
+    won't be explaining where it's from. But I thank my collaborators
+    for the data.
   }
 
 \end{frame}
@@ -226,7 +230,7 @@ Sex verification
 
 \note{
   One way to identify sample mislabelings is by comparing the
-  annotated to sex to what you can infer from the genotypes or
+  annotated sex to what you can infer from the genotypes or
   expression data.
 }
 
@@ -245,6 +249,17 @@ Sex verification
    data, is to look at the dosage of X and Y chromosome markers
    (average intensity for microarray-based genotypes, or frequency of
    mapped reads for sequencing-based genotypes).
+
+   The x-axis is average intensity of SNPs on the X chromosome; the
+   y-axis is average intensity of SNPs on the Y chromosome.
+
+   The green ball in the lower-right are females with two X
+   chromosomes and no Y. The purple ball in the upper-left are males
+   with one X and one Y. The points in the lower-left are maybe XO
+   females.
+
+   We are looking for females in the upper-left (and there is one
+   such) or males in the lower-right.
 }
 
 \end{frame}
