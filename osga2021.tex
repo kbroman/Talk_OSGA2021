@@ -240,6 +240,50 @@ Sample duplicates
 
 
 
+
+
+\begin{frame}[c]{Correlation between mRNA samples}
+
+\figh{Figs/mrna_dups.png}{0.85}
+
+\note{
+  It seems like you should be able to do the same thing with mRNA or
+  protein samples: just look at the correlation between samples, or
+  perhaps the RMS difference. But I've not had much success finding
+  duplicate samples this way. You maybe need to exclude genes that
+  appear to not be expressed (and so are just noise).
+
+  These are histograms of the correlation between mRNA expression
+  samples. The two sexes are anti-correlated. The lower histogram is
+  for correlation between measurements after controlling for sex.
+}
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}[c]{Correlation between protein samples}
+
+\figh{Figs/protein_dups.png}{0.85}
+
+\note{
+  This is similar as the last slide, but with mass-spec-based protein
+  measurements. The anti-correlation between sexes is not as strong
+  but still present.
+}
+
+\end{frame}
+
+
+
+
+
+
+
 {\setbeamercolor{normal text}{bg=revbackground}
 
 \begin{frame}[c]{}
