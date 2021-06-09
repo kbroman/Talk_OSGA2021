@@ -4,8 +4,8 @@ These are slides for a seminar on _Identifying sample mix-ups in eQTL
 data_, for the [OSGA Webinar Series](https://opar.io/training/osga-webinar-series-2020.html)
 on 11 June 2021.
 
-- Slides PDF: <https://kbroman.org/Talk_OSGA2021>
-- Slides with notes: <https://kbroman.org/Talk_OSGA2021/osga2021_notes.pdf>
+- [Slides PDF](https://kbroman.org/Talk_OSGA2021/osga2021.pdf)
+- [Slides with notes](https://kbroman.org/Talk_OSGA2021/osga2021_notes.pdf)
 
 Most of the data used here is not yet public, so you may not be able
 to build these slides yourself.
