@@ -10,7 +10,16 @@ on 11 June 2021.
 Most of the data used here is not yet public, so you may not be able
 to build these slides yourself.
 
-Related papers:
+#### Needed libraries:
+
+- here
+- igraph
+- qtl2
+- broman
+- fst
+- github/kbroman/B6BTBR07a
+
+#### Related papers:
 
 - Broman et al. (2015) Identification and correction of sample mix-ups
   in expression genetic data: A case study. G3 (Bethesda) 5:2177-2186
