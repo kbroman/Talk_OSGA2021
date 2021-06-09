@@ -1,4 +1,5 @@
-mrna <- readRDS("../Data/chick_mrna.rds")
+library(here)
+mrna <- readRDS(here("Data/chick_mrna.rds"))
 sex <- substr(rownames(mrna), 1, 1)
 
 mrna_adj <- mrna
@@ -11,7 +12,7 @@ rho <- cor(t(mrna), use="pair")
 rho_adj <- cor(t(mrna_adj), use="pair")
 
 
-png("../Figs/mrna_dups.png", height=1200, width=2000, pointsize=32)
+png(here("Figs/mrna_dups.png"), height=1200, width=2000, pointsize=32)
 
 par(mfrow=c(2,1), mar=c(5.1, 0.1, 2.1, 2.1))
 

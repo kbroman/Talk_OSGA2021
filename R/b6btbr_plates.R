@@ -3,6 +3,9 @@
 # igraph (cran)
 # kbroman/B6BTBR07a
 
+library(here)
+library(igraph)
+library(B6BTBR07a)
 load("calls.RData")
 
 # colors
@@ -17,10 +20,8 @@ orange <- broman::brocolors("web")["orange"]
 
 calls <- sub("\\*", "", calls)
 
-library(igraph)
 iArrows <- igraph:::igraph.Arrows
 
-library(B6BTBR07a)
 data(topstuff)
 
 ts.mousenum <- sapply(strsplit(rownames(topstuff), "_"), function(a) a[[2]])
@@ -79,7 +80,7 @@ split.controlplatenum[,3] <- as.numeric(substr(sapply(strsplit(controlplatenum, 
 rownames(split.controlplatenum) <- names(controlplatenum)
 ######################################################################
 
-pdf("../Figs/b6btbr_plates.pdf", height=6.5, width=10, pointsize=10)
+pdf(here("Figs/b6btbr_plates.pdf"), height=6.5, width=10, pointsize=10)
 
 par(mar=rep(0,4), bty="n")
 par(bg=bgcolor, fg=fgcolor, col=fgcolor, col.axis=fgcolor)

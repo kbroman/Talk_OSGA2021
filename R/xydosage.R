@@ -1,12 +1,13 @@
 library(fst)
 library(broman)
 library(qtl2)
+library(here)
 
-x <- read.fst("../Data/attieDO_chrXint.fst")
-y <- read.fst("../Data/attieDO_chrYint.fst")
+x <- read.fst(here("Data/attieDO_chrXint.fst"))
+y <- read.fst(here("Data/attieDO_chrYint.fst"))
 stopifnot(ncol(x) == ncol(y), all(colnames(x) == colnames(y)))
 
-do <- readRDS("../Data/attieDO_v0.rds")
+do <- readRDS(here("Data/attieDO_v0.rds"))
 do <- do[n_missing(do, "ind", "prop") < 0.2,]
 wh <- which(colnames(x) %in% ind_ids(do))
 x <- x[,c(1,wh)]
@@ -24,7 +25,7 @@ ym <- colMeans(y[y[,1] %in% ymar, -1], na.rm=TRUE)
 
 
 
-pdf("../Figs/xydosage.pdf", height=6, width=7, pointsize=14)
+pdf(here("Figs/xydosage.pdf"), height=6, width=7, pointsize=14)
 par(mar=c(6.1,5.1,1.6,1.1))
 purple_green <- brocolors("web")[c("purple", "green")]
 grayplot(xm, ym, bg=purple_green[is_female + 1],

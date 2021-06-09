@@ -1,11 +1,12 @@
 # plot of missing data
 library(qtl2)
 library(broman)
+library(here)
 
-attie <- readRDS("../Data/attieDO_v1.rds")
+attie <- readRDS(here("Data/attieDO_v1.rds"))
 pmis <- n_missing(attie, "ind", "prop")*100
 
-pdf("../Figs/missing_data.pdf", height=6, width=10)
+pdf(here("Figs/missing_data.pdf"), height=6, width=10)
 par(mar=c(5.1,4.1, 1.1, 1.1))
 col <-c("pink", "orange", "lightblue", "green", "purple")[as.numeric(attie$covar$wave)]
 grayplot(pmis, xlab="Mouse", ylab="Percent missing genotypes",

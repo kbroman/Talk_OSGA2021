@@ -33,16 +33,18 @@
 # - `lod.peaks` - a list with "additive", "diet", "sex_int",
 #   each a data frame with `r vec2string(colnames(dataset.protein$lod.peaks$additive))`
 
+library(here)
+
 url <- "https://churchilllab.jax.org/qtlviewer/svenson/DOHFD/rdata"
-file <- "../Data/Svenson_DO850_for_eQTL_viewer_v9.RData"
+file <- here("Data/Svenson_DO850_for_eQTL_viewer_v9.RData")
 if(!file.exists(file)) {
     download.file(url, file)
 }
 
 load(file)
 protein <- dataset.protein$data
-saveRDS(protein, "../Data/chick_protein.rds")
+saveRDS(protein, here("Data/chick_protein.rds"))
 mrna <- dataset.mrna$data$norm
-saveRDS(mrna, "../Data/chick_mrna.rds")
-saveRDS(map, "../Data/chick_map.rds")
-saveRDS(genoprobs, "../Data/chick_genoprobs.rds")
+saveRDS(mrna, here("Data/chick_mrna.rds"))
+saveRDS(map, here("Data/chick_map.rds"))
+saveRDS(genoprobs, here("Data/chick_genoprobs.rds"))

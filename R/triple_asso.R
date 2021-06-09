@@ -1,11 +1,13 @@
 # illustration of associations
 
+library(here)
+
 text_color <- "darkslateblue"
 text_cex <- 2
 arrow_color <- "violetred"
 arrow_lwd <- 3
 
-pdf("../Figs/triple_asso.pdf", height=6, width=10, pointsize=14)
+pdf(here("Figs/triple_asso.pdf"), height=6, width=10, pointsize=14)
 
 par(bty="n", mar=rep(0.1,4))
 plot(0,0,type="n", xlim=c(0,100), ylim=c(0,100), xaxs="i", yaxs="i",

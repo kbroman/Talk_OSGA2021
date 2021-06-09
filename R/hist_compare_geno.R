@@ -1,7 +1,8 @@
 # compare geno histogram
+library(here)
 library(qtl2)
 
-do <- readRDS("../Data/attieDO_v1.rds")
+do <- readRDS(here("Data/attieDO_v1.rds"))
 cg <-compare_geno(do, cores=0)
 
 prop_match_fig <- function(label=FALSE)
@@ -19,6 +20,6 @@ prop_match_fig <- function(label=FALSE)
     arrows(textpos, 3000, textpos, 1000, length=0.15, col="violetred", lwd=2)
 }
 
-pdf("../Figs/hist_compare_geno.pdf", height=6, width=10, pointsize=14)
+pdf(here("Figs/hist_compare_geno.pdf"), height=6, width=10, pointsize=14)
 prop_match_fig(TRUE)
 dev.off()

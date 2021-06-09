@@ -1,4 +1,5 @@
-prot <- readRDS("../Data/chick_protein.rds")
+library(here)
+prot <- readRDS(here("Data/chick_protein.rds"))
 sex <- substr(rownames(prot), 1, 1)
 
 prot_adj <- prot
@@ -11,7 +12,7 @@ rho <- cor(t(prot), use="pair")
 rho_adj <- cor(t(prot_adj), use="pair")
 
 
-png("../Figs/protein_dups.png", height=1200, width=2000, pointsize=32)
+png(here("Figs/protein_dups.png"), height=1200, width=2000, pointsize=32)
 
 par(mfrow=c(2,1), mar=c(5.1, 0.1, 2.1, 2.1))
 

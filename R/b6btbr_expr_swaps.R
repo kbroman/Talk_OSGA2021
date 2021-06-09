@@ -1,4 +1,5 @@
 # illustration of the swaps of expression arrays
+library(here)
 
 gray <- "gray93"
 distcolor <- rgb(255,80,80, maxColorValue=255)
@@ -34,7 +35,7 @@ arraySwaps$kidney <- list(c("Mouse3484", "Mouse3503"), # mixture?
 arraySwaps$liver <- list(c("Mouse3136", "Mouse3141"), # right is dup
                          c("Mouse3142", "Mouse3143")) # swap
 
-pdf("../Figs/b6btbr_expr_swaps.pdf", height=6, width=10, pointsize=14)
+pdf(here("Figs/b6btbr_expr_swaps.pdf"), height=6, width=10, pointsize=14)
 par(mfrow=c(2,3), mar=c(1.1, 1.1, 3.1, 1.1))
 for(i in 1:6) {
   plot(0,0,type="n", xlim=c(0, 100), ylim=c(0, 100),
