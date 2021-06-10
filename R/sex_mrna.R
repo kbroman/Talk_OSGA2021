@@ -51,5 +51,7 @@ par(mar=c(5.1,4.1, 1.6, 1.1))
 grayplot(fdist, mdist, bg=purple_green[(sex=="F") + 1],
          xlab="distance from female average",
          ylab="distance from male average")
+ontop <- (fdist < 2 & sex=="M") | (fdist > 2 & sex=="F")
+points(fdist[ontop], mdist[ontop], pch=21, bg=purple_green[(sex[ontop]=="F") + 1])
 legend("topright", pch=21, pt.bg=rev(purple_green), c("female", "male"), bg="gray90")
 dev.off()
