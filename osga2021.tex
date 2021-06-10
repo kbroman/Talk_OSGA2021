@@ -336,7 +336,7 @@ Sex verification
 \begin{frame}[c]{Sex and gene expression}
 
 
-\figh{Figs/sex_mrna.pdf}{0.95}
+\figh{Figs/sex_mrna_indgenes.pdf}{0.95}
 
 
   \note{
@@ -345,12 +345,38 @@ Sex verification
 
     We could think hard about genes that should show a big sex
     difference (for example, \emph{Xist}), or we could just do t-tests
-    to identify a set of genes that have big sex differences, and then
-    use them to form a classifier for sex from gene expression.
-    We want a method that can handle some misclassified samples.
+    to identify a set of genes that have big sex differences. These
+    are the top six genes, in terms of sex difference in expression.
+    Of course, Xist is the first.
 
-    We could also just calculate fitted values for each sex at each
-    gene and then look at RMS of the residuals from the two.
+    We could choose the top say 100 genes and use them to form a
+    classifier for sex from gene expression.
+    We want a method that can handle some misclassified samples.
+  }
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Sex and gene expression}
+
+
+\figh{Figs/sex_mrna.pdf}{0.95}
+
+
+  \note{
+    What I ended up doing was just pick the top 100 genes and then
+    calculate the mean in males and females, and then for each sample,
+    look at the RMS difference from the male means and from the female
+    means. This is a plot of those.
+
+    Most of the samples have well-differentiated sex by this approach,
+    but there are a bunch of samples in the middle, maybe due to batch
+    differences that I've not accounted for?
+
+    Anyway, while there are a number of samples in the middle that are
+    unclear, there's also a set of males that look like females and
+    one female that looks like male.
   }
 \end{frame}
 
