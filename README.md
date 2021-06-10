@@ -18,6 +18,7 @@ to build these slides yourself.
 - broman
 - fst
 - github/kbroman/B6BTBR07a
+- parallel
 
 #### Related papers:
 

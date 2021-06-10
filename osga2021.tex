@@ -333,7 +333,26 @@ Sex verification
 
 
 
+\begin{frame}[c]{Sex and gene expression}
 
+
+\figh{Figs/sex_mrna.pdf}{0.95}
+
+
+  \note{
+    We should be able to do the same sort of thing, to verify the sex
+    of the mRNA samples.
+
+    We could think hard about genes that should show a big sex
+    difference (for example, \emph{Xist}), or we could just do t-tests
+    to identify a set of genes that have big sex differences, and then
+    use them to form a classifier for sex from gene expression.
+    We want a method that can handle some misclassified samples.
+
+    We could also just calculate fitted values for each sex at each
+    gene and then look at RMS of the residuals from the two.
+  }
+\end{frame}
 
 
 
@@ -471,4 +490,4 @@ Slides: \href{https://kbroman.org/Talk_OSGA2021}{\tt
 
 \end{frame}
 
-\end{document}
+p\end{document}

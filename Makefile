@@ -9,8 +9,8 @@ FIGS = Figs/triple_asso.pdf \
 	   Figs/xydosage.pdf \
 	   Figs/hist_compare_geno.pdf \
 	   Figs/protein_dups.png \
-	   Figs/mrna_dups.png
-
+	   Figs/mrna_dups.png \
+	   Figs/sex_mrna.pdf
 
 all: docs/$(STEM).pdf docs/$(STEM)_notes.pdf
 
