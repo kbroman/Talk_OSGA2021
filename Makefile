@@ -10,7 +10,8 @@ FIGS = Figs/triple_asso.pdf \
 	   Figs/hist_compare_geno.pdf \
 	   Figs/protein_dups.png \
 	   Figs/mrna_dups.png \
-	   Figs/sex_mrna.pdf
+	   Figs/sex_mrna.pdf \
+	   Figs/sex_protein.pdf
 
 all: docs/$(STEM).pdf docs/$(STEM)_notes.pdf
 
