@@ -106,9 +106,9 @@ rect(x2[1], y4[1]+diff(y4)*0.6, x2[1]+diff(x2)*xw2, y4[1]+diff(y4)*0.6+rech, col
 x3 <- c(99-xw, 99)
 y5 <- c(y3[1], y3[1]+diff(y3)*1.2)
 rect(x3[1], y5[1], x3[2], y5[2])
-text(x3[1]-xtgap, mean(y5), "DNA samples", srt=90)
+text(x3[1]-xtgap, mean(y5), "protein samples", srt=90)
 text(mean(x3), y5[2]+ytgap, "mRNA samples")
-text(mean(x3), y5[1]-ytgap, "distance matrix", cex=cex_main, col=maincolor, font=2)
+text(mean(x3), y5[1]-ytgap, "similarity matrix", cex=cex_main, col=maincolor, font=2)
 
 
 
@@ -122,7 +122,7 @@ xgap <- 0.3
 x <- x3[1]+xgap + (0:(ncol(z)-1))*(diff(x3)-xgap*2)/ncol(z)
 xn <- x + diff(x[1:2])
 ygap <- 0.5
-y <- y5[1]+ygap + (ncol(z):1)*(diff(y5)-2*ygap)/ncol(z)
+y <- y5[1]+ygap + (nrow(z):1)*(diff(y5)-2*ygap)/nrow(z)
 yn <- y + diff(y[1:2])
 
 for(i in seq(along=y)) {
