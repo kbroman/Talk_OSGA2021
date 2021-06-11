@@ -99,13 +99,13 @@ y4 <- c(y3[1], y3[1]+yh[2])
 rect(x1[1], y3[1], x1[2], y3[2])
 text(mean(x1), y3[1]-ytgap, "predicted expression", cex=cex_main, col=maincolor, font=2)
 text(x1[1]-xtgap, mean(y3), "DNA samples", srt=90)
-text(mean(x1), y3[2]+ytgap, "eQTL")
+text(mean(x1), y3[2]+ytgap, "genes")
 
 
 rect(x2[1], y4[1], x2[2], y4[2])
 text(mean(x2), y4[1]-ytgap, "expression traits", cex=cex_main, col=maincolor, font=2)
 text(x2[1]-xtgap, mean(y4), "mRNA samples", srt=90)
-text(mean(x2), y4[2]+ytgap, "eQTL")
+text(mean(x2), y4[2]+ytgap, "genes")
 
 if(version==3) return()
 
