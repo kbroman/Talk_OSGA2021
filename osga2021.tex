@@ -956,4 +956,29 @@ Slides: \href{https://kbroman.org/Talk_OSGA2021}{\tt
 
 \end{frame}
 
+
+
+\begin{frame}[c]{DNA $\leftrightarrow$ protein: best vs 2nd-best}
+
+  \figh{Figs/best_v_2ndbest_dna_prot.pdf}{0.95}
+
+  \note{
+    Here's an extra slide showing (on the right) the best distance
+    vs the 2nd-best distance. The panel on the left we'd seen before,
+    of the best distance vs the minimum distance.
+
+    This is useful for assessing the evidence that the sample with the
+    best distance is the real sample identity. If the best distance is
+    quite far from the second-best distance, than it seems like we can
+    identify the true sample. If they're similar, we don't have much
+    evidence to relabel the sample.
+
+    I've highlighted a couple of points in orange, where the
+    second-best distance is quite close to the best distance. But for
+    both of these, the best distance is the same as the self distance,
+    and so there's no reason to question their identity.
+  }
+\end{frame}
+
+
 \end{document}

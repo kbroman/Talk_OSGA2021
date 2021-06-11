@@ -115,3 +115,22 @@ for(i in c("M348", "M410", "M349", "F371", "F352", "M386")) {
     points(which(names(v)==i), v[i], cex=1.2, pch=21, bg="orange3")
 }
 dev.off()
+
+# extra plot: best vs self + best vs 2nd best
+pdf(here("Figs/best_v_2ndbest_dna_prot.pdf"), height=6, width=11, pointsize=14)
+par(mar=c(5.1, 4.1, 1.1, 1.1), pty="s")
+self <- get_self(dist_dna_prot)
+best <- get_best(dist_dna_prot)
+secbest <- get_2ndbest(dist_dna_prot)
+par(mfrow=c(1,2))
+wh <- !is.na(best) & (secbest-best < 0.15)
+grayplot(self, best, xlab="self-distance", ylab="minimum distance",
+         xlim=c(0.4, 1.26), ylim=c(0.4, 1.26))
+abline(0,1, lwd=2, lty=2)
+points(self, best, pch=21, bg="lightblue")
+points(self[wh], best[wh], pch=21, bg="orange2")
+grayplot(secbest, best, xlab="2nd-best distance", ylab="minimum distance",
+         xlim=c(0.4, 1.26), ylim=c(0.4, 1.26))
+points(secbest[wh], best[wh], pch=21, bg="orange2")
+abline(0,1, lwd=2, lty=2)
+dev.off()
