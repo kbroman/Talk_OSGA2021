@@ -15,7 +15,9 @@ FIGS = Figs/triple_asso.pdf \
 	   Figs/evp_mixup_scheme.pdf \
 	   Figs/gve_mixup_scheme.pdf \
 	   Figs/gvp_mixup_scheme.pdf \
-	   Figs/heatmap_mrna_v_protein.png
+	   Figs/heatmap_mrna_v_protein.png \
+	   Figs/heatmap_dna_v_mrna.png \
+	   Figs/heatmap_dna_v_prot.png
 
 all: docs/$(STEM).pdf docs/$(STEM)_notes.pdf
 
@@ -40,4 +42,10 @@ Figs/%.png: R/%.R
 	cd R;R CMD BATCH $(R_OPTS) $(^F)
 
 Figs/heatmap_mrna_v_protein.png: R/mrna_v_protein.R
+	cd R;R CMD BATCH $(R_OPTS) $(^F)
+
+Figs/heatmap_dna_v_mrna.png: R/dna_v_mrna.R
+	cd R;R CMD BATCH $(R_OPTS) $(^F)
+
+Figs/heatmap_dna_v_protein.png: R/dna_v_prot.R
 	cd R;R CMD BATCH $(R_OPTS) $(^F)
