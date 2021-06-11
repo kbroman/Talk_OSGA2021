@@ -12,7 +12,9 @@ FIGS = Figs/triple_asso.pdf \
 	   Figs/mrna_dups.png \
 	   Figs/sex_mrna.pdf \
 	   Figs/sex_protein.pdf \
-	   Figs/evp_mixup_scheme.pdf
+	   Figs/evp_mixup_scheme.pdf \
+	   Figs/gve_mixup_scheme.pdf \
+	   Figs/gvp_mixup_scheme.pdf
 
 all: docs/$(STEM).pdf docs/$(STEM)_notes.pdf
 
