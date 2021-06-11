@@ -2,12 +2,13 @@
 # genotype vs. expression
 ######################################################################
 
+library(here)
+
 evp_scheme <- function(version=1) {
 
 # data for the illustration
 # z = similarity matrix
 # pe_dat = protein and expression data
-    library(here)
     dat <- readRDS(here("Data/evp_mixup_scheme.rds"))
     z <- dat$sim - min(dat$sim)
     z <- z/diff(range(z))
@@ -52,11 +53,11 @@ text(mean(x2), y2[2]+ytgap, "proteins")
 
 if(version==1) return()
 
-recw <- 1.2
+recw <- 0.9
 rect(x1[1]+diff(x1)*0.2, y1[1], x1[1]+diff(x1)*0.2+recw, y2[2],
      col=CCcolor[1])
-rect(x2[1]+diff(x2)*0.2, y1[1], x2[1]+diff(x2)*0.2+recw, y2[2],
-     col=CCcolor[1])
+rect(x2[1]+diff(x2)*0.7, y1[1], x2[1]+diff(x2)*0.7+recw, y2[2],
+     col=sexcolor[2])
 
 
 arrowgap <- 4.5
