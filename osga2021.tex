@@ -410,11 +410,11 @@ Sex verification
 
   \note{
     I did the same thing as with the mRNA data: pick the top 100
-    proteins by their sex difference. Calculate the average for males
+    proteins by their sex difference, calculate the average for males
     and for females, and then take the RMS difference for each sample
     from the male means and the female means.
 
-    For this particular data set, there are a number of females
+    For this particular data set, there are a few females
     deep within the males.
   }
 \end{frame}
@@ -441,6 +441,9 @@ Sample mix-ups
 mRNA $\leftrightarrow$ protein
 
 \note{
+  We now turn to the question of sample mix-ups more directly. We'll
+  start by comparing a set of mRNA expression data to a set of
+  proteomics data.
 }
 
 \end{frame}
@@ -456,6 +459,16 @@ mRNA $\leftrightarrow$ protein
 
 
   \note{
+    We have two rectangles of data where some of the rows are supposed
+    to correspond.
+
+    We first look for gene/protein pairs that are highly correlated.
+    We then focus on those and calculate the correlation between rows,
+    among the highly correlated gene/protein pairs.
+
+    The between-sample correlations can be viewed as a similarity
+    matrix. We're hoping to see a single large value in each row, for
+    the samples that are supposed to correspond.
    }
 
 \end{frame}
@@ -466,6 +479,14 @@ mRNA $\leftrightarrow$ protein
   \figh{Figs/hist_cor_mrna_prot.pdf}{0.95}
 
   \note{
+    For a set of gene expression data and proteomics data, I
+    considered each protein and found the most-correlated gene,
+    adjusting for sex. (Whether to adjust for sex is not totally
+    clear to me, but it makes the subsequent figures easier to
+    understand.)
+
+    I show the top protein/gene pair (which all correspond to an mRNA
+    and its protein product).
   }
 \end{frame}
 
@@ -475,6 +496,18 @@ mRNA $\leftrightarrow$ protein
   \figw{Figs/heatmap_mrna_v_protein.png}{1.0}
 
   \note{
+    We take the top 100 gene/protein pairs and use them to calculate
+    the correlation between samples. This is that correlation matrix.
+    There are not quite 200 protein samples and a bit over 400 mRNA
+    samples.
+
+    Black means more similar, and white less similar. The checkboard
+    pattern is probably some sort of batch effects. If I hand't
+    controlled for sex, there would be two big squares here, for the
+    two sexes.
+
+    You can see a couple of diagonal lines, for the samples that
+    correspond.
   }
 \end{frame}
 
@@ -485,6 +518,14 @@ mRNA $\leftrightarrow$ protein
   \figh{Figs/self_nonself_mrna_prot.pdf}{0.95}
 
   \note{
+    If we separate the values for samples that are supposed to correspond and the
+    values for samples that are not supposed to, we ideally would have
+    two non-overlapping distributions.
+
+    The bulk of the samples are like that: large values for
+    the self-self similarities, and small values for the self-nonself
+    similarities. But there are a bunch of self-self values that are
+    small, and a few self-nonself values that are large.
   }
 \end{frame}
 
@@ -495,6 +536,17 @@ mRNA $\leftrightarrow$ protein
   \figh{Figs/self_v_best_mrna_prot.pdf}{0.95}
 
   \note{
+    Here's a scatterplot where for each protein sample I find the
+    maximum similarity in that row and plot it against the similarity
+    for the mRNA sample that is supposed to correspond.
+
+    For most samples, these two values are the same, and they are
+    large. (That's the diagonal line in the top-right.)
+
+    But there are a bunch of samples where the self-similarity is
+    small, indicating that it seems to have the wrong label. Many of
+    these are largely similar to some other sample, but a few are not
+    similar to anything.
   }
 \end{frame}
 
@@ -508,6 +560,22 @@ mRNA $\leftrightarrow$ protein
   \figh{Figs/samples_mrna_prot.pdf}{0.95}
 
   \note{
+    Here I have focused on a selected set of six protein samples,
+    and just plot all of the values in that row of the similarity
+    matrix. For each of these protein samples, I highlight the closest
+    mRNA sample.
+
+    The pair on the left looks like a sample swap: M348 is closest to
+    M410 and vice versa. Similarly, the pair in the middle looks like
+    a sample swap, with F371 being closest to M349 and vice versa. The
+    two samples on the right look to be correctly labeled.
+
+    Overall, there were about 9 sample swaps and then a few other
+    protein samples that didn't seem to correspond to any mRNA sample.
+
+    With these sample swaps, we can't tell, from these data alone,
+    whether the problem is with the mRNA samples, the protein samples,
+    or some of each.
   }
 \end{frame}
 
@@ -534,6 +602,8 @@ Sample mix-ups
 DNA $\leftrightarrow$ mRNA
 
 \note{
+  Let's now turn to the same sort of thing, but comparing DNA-based
+  genotypes to mRNA expression.
 }
 
 \end{frame}
@@ -550,17 +620,35 @@ DNA $\leftrightarrow$ mRNA
 
 
   \note{
-   }
+    The approach we take starts similarly: we identify a set of
+    expression traits with strong eQTL, and then pull out the
+    genotypes at those eQTL.
+
+    The simplest thing is to use the genotype/expression
+    correspondence to get predected expression values for each trait,
+    based on the observed eQTL genotypes. Basically just calculate the
+    average trait value for each genotype and assign that as the
+    fitted value.
+
+    We can then take the root-mean-square (RMS) difference between the
+    predicted expression values for a DNA sample and the observed
+    expression values for an mRNA sample, and used that as a distance
+    matrix, comparing the DNA and mRNA samples.
+  }
 
 \end{frame}
 
 
 
-\begin{frame}[c]{DNA $\leftrightarrow$ mRNA correlations}
+\begin{frame}[c]{DNA $\leftrightarrow$ mRNA LOD scores}
 
   \figh{Figs/hist_lod_mrna.pdf}{0.95}
 
   \note{
+    For a set of RNA-seq based expression data, here are the LOD
+    scores. For each expression trait, I did a genome scan adjusting
+    for the sex and picked out the single genome-wide maximum value.
+    There are 100 genes with LOD about 150 and higher.
   }
 \end{frame}
 
@@ -570,6 +658,11 @@ DNA $\leftrightarrow$ mRNA
   \figw{Figs/heatmap_dna_v_mrna.png}{1.0}
 
   \note{
+    Using those 100 genes, I calculated predicted expression values
+    for each DNA sample, and then calculated this distance matrix.
+    Black again means close. You can see a few black diagonal lines in
+    here. There are about 450 mRNA samples and a bit over 800 DNA
+    samples.
   }
 \end{frame}
 
@@ -580,6 +673,8 @@ DNA $\leftrightarrow$ mRNA
   \figh{Figs/self_nonself_dna_mrna.pdf}{0.95}
 
   \note{
+    Here, if I pull apart the self-self and self-nonself distances, I
+    find that there's almost no overlap.
   }
 \end{frame}
 
@@ -590,6 +685,10 @@ DNA $\leftrightarrow$ mRNA
   \figh{Figs/self_v_best_dna_mrna.pdf}{0.95}
 
   \note{
+    If I calculate the minimum distance in each row and plot it
+    against the self-self distance, I found that each mRNA sample is
+    actually closest to itself than to any other sample. There don't
+    seem to be any problems here.
   }
 \end{frame}
 
@@ -603,6 +702,8 @@ DNA $\leftrightarrow$ mRNA
   \figh{Figs/samples_dna_mrna.pdf}{0.95}
 
   \note{
+    Here are those six selected samples again. In each case, the
+    samples look to have the correct labels.
   }
 \end{frame}
 
