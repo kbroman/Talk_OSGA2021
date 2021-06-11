@@ -17,7 +17,8 @@ FIGS = Figs/triple_asso.pdf \
 	   Figs/gvp_mixup_scheme.pdf \
 	   Figs/heatmap_mrna_v_protein.png \
 	   Figs/heatmap_dna_v_mrna.png \
-	   Figs/heatmap_dna_v_prot.png
+	   Figs/heatmap_dna_v_prot.png \
+	   Figs/hs_light.pdf
 
 all: docs/$(STEM).pdf docs/$(STEM)_notes.pdf
 
