@@ -12,13 +12,14 @@ to build these slides yourself.
 
 #### Needed libraries:
 
-- here
-- igraph
-- qtl2
-- broman
-- fst
-- github/kbroman/B6BTBR07a
-- parallel
+- [lineup2](https://cran.r-project.org/package=lineup2)
+- [qtl2](https://kbroman.org/qtl2)
+- [broman](https://cran.r-project.org/package=broman)
+- [github/kbroman/B6BTBR07a](https://github.com/kbroman/B6BTBR07a)
+- [here](https://cran.r-project.org/package=here)
+- [igraph](https://cran.r-project.org/package=here)
+- [fst](https://cran.r-project.org/package=fst)
+- [RColorBrewer](https://cran.r-project.org/package=RColorBrewer)
 
 #### Related papers:
 
