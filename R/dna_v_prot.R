@@ -101,7 +101,7 @@ pdf(here("Figs/self_v_best_dna_prot.pdf"), height=6, width=8, pointsize=14)
 self <- get_self(dist_dna_prot)
 best <- get_best(dist_dna_prot)
 grayplot(self, best, xlab="self-distance", ylab="minimum distance",
-         xlim=c(0.4, 1.3), ylim=c(0.4, 1.3))
+         xlim=c(0.4, 1.26), ylim=c(0.4, 0.9))
 dev.off()
 
 # plot of a few of the samples

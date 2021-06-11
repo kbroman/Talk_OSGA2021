@@ -653,7 +653,7 @@ DNA $\leftrightarrow$ mRNA
 \end{frame}
 
 
-\begin{frame}[c]{DNA $\leftrightarrow$ mRNA similarity matrix}
+\begin{frame}[c]{DNA $\leftrightarrow$ mRNA distance matrix}
 
   \figw{Figs/heatmap_dna_v_mrna.png}{1.0}
 
@@ -668,7 +668,7 @@ DNA $\leftrightarrow$ mRNA
 
 
 
-\begin{frame}[c]{DNA $\leftrightarrow$ mRNA similarities}
+\begin{frame}[c]{DNA $\leftrightarrow$ mRNA distances}
 
   \figh{Figs/self_nonself_dna_mrna.pdf}{0.95}
 
@@ -736,6 +736,8 @@ Sample mix-ups
 DNA $\leftrightarrow$ protein
 
 \note{
+  Let's turn to a comparison between DNA-based genotypes and
+  proteomics data.
 }
 
 \end{frame}
@@ -748,6 +750,15 @@ DNA $\leftrightarrow$ protein
 
 
   \note{
+    The approach is the same as for the comparison of DNA and mRNA.
+    For each protein, I do a genome scan and look for the strongest
+    pQTL, and I pull out the proteins that have strong pQTL.
+
+    I then use the association between genotype and protein level to
+    get predicted protein levels for each DNA sample. I then calculate
+    the RMS difference between the predicted protein levels for a
+    DNA sample and observed protein levels for some proteomics sample,
+    and use this as a distance matrix.
    }
 
 \end{frame}
@@ -759,25 +770,33 @@ DNA $\leftrightarrow$ protein
   \figh{Figs/hist_lod_prot.pdf}{0.95}
 
   \note{
+    There are many proteins with very strong pQTL. I'll focus on the
+    top 100 proteins, with LOD scores about 30 and up.
   }
 \end{frame}
 
 
-\begin{frame}[c]{DNA $\leftrightarrow$ protein similarity matrix}
+\begin{frame}[c]{DNA $\leftrightarrow$ protein distance matrix}
 
   \figw{Figs/heatmap_dna_v_prot.png}{1.0}
 
   \note{
+    Here's the distance matrix comparing just under 200 proteomics
+    samples to just over 800 DNA samples. Black means close; you can
+    see two prominent diagonal lines.
   }
 \end{frame}
 
 
 
-\begin{frame}[c]{DNA $\leftrightarrow$ protein similarities}
+\begin{frame}[c]{DNA $\leftrightarrow$ protein distances}
 
   \figh{Figs/self_nonself_dna_prot.pdf}{0.95}
 
   \note{
+    If we separate the self-self distances from the self-nonself ones,
+    we again see a bunch of self-self distances that are overly large,
+    and self-nonself distances that are too small.
   }
 \end{frame}
 
@@ -788,6 +807,11 @@ DNA $\leftrightarrow$ protein
   \figh{Figs/self_v_best_dna_prot.pdf}{0.95}
 
   \note{
+    Taking the minimum distance in each row and plotting that against
+    the distance for the sample with the same label, we see that most
+    samples look to be correctly labeled, but there's a big group that
+    are not close to the corresponding sample but are close to some
+    other sample.
   }
 \end{frame}
 
@@ -801,6 +825,16 @@ DNA $\leftrightarrow$ protein
   \figh{Figs/samples_dna_prot.pdf}{0.95}
 
   \note{
+    Here are those six selected samples again. A couple of sample
+    swaps and a pair that are correct.
+
+    Combining what we've learned from the DNA/mRNA/protein, we can
+    conclude that the mislabeling problems were in the protein
+    samples.
+
+    Overall, we identified 9 sample swaps and two additional
+    mislabeled samples. There were 192 total samples, so this is just
+    above 10\% problems.
   }
 \end{frame}
 
@@ -835,6 +869,12 @@ DNA $\leftrightarrow$ protein
     \end{columns}
 
   \note{
+    In summary: sample mix-ups shouldn't happen; we should do our best
+    to avoid them. But if the \emph{do\/} happen, we should find them.
+
+    It's not too hard to look for sample mix-ups. Pull out pairs of
+    highly correlated variables and then use them to establish the
+    similarity or distance between samples.
   }
 \end{frame}
 
