@@ -6,6 +6,7 @@ on 11 June 2021.
 
 - [Slides PDF](https://kbroman.org/Talk_OSGA2021/osga2021.pdf)
 - [Slides with notes](https://kbroman.org/Talk_OSGA2021/osga2021_notes.pdf)
+- [Video](https://youtu.be/h5gF7YnffeI)
 
 Most of the data used here is not yet public, so you may not be able
 to build these slides yourself.
